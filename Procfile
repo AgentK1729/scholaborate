@@ -1,0 +1,1 @@
+web: gunicorn scholaborate.wsgi --log-file -

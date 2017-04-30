@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <style>
+		  text
+		  {
+			  color:#16A085;
+			  font-size:3vh;
+		  }
+	  </style>
+    <meta charset="utf-8">
+    <title>User Profile</title>
+    <meta name="description" content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version."/>
+
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="{{STATIC_URL}}dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	  <script src="{{STATIC_URL}}jquery.js"></script>
+
+    <!-- Loading Flat UI -->
+    <link href="{{STATIC_URL}}dist/css/flat-ui.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}docs/assets/css/demo.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}card_styles.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+	 <script type="text/javascript">
+	 	$(document).ready(function() {
+	 		$(".swatches-col").hide();
+	 	});
+	 	function handle(e)
+	 	{
+	 		if(e.keyCode==13)
+	 		{
+	 			var tag = document.getElementById("currenttag").value;
+	 			var status1 = document.getElementById("optionsRadios1").checked;
+	 			var status2 = document.getElementById("optionsRadios2").checked;
+	 			var div = document.createElement('div');
+	 			div.innerHTML = '<span class="tag label label-info" id="' + tag +'" style="float:left; margin-right:1%; background-color:#16A085; font-size:3vh; color:white;">' + tag + '<span data-role="remove" onclick="drop(' + tag + ')"></span></span>'
+	 			document.getElementById('tags').appendChild(div);
+	 			document.getElementById("currenttag").value = "";
+	 			var swatches = document.getElementsByClassName("swatches-col");
+	 			$(document).ready(function() {
+	 				if (status2)
+	 				{
+	 					if (tag == "Machine Learning" || tag == "ML")
+	 					{
+		 					$("#prof1").show();
+		 					$("#prof2").show();
+	 					}
+
+	 					if (tag == "Artificial Intelligence" || tag == "AI")
+	 					{
+	 						$("#prof1").show();
+	 						$("#prof2").hide();
+	 					}
+
+	 					if (tag == "Natural Language Processing" || tag == "NLP")
+	 					{
+	 						$("#prof1").hide();
+	 						$("#prof2").show();
+	 					}
+
+	 					if (tag == "Biochemistry" || tag == "Microbiology")
+	 					{
+	 						$("#prof3").show();
+	 					}
+
+	 					if (tag == "Criminal Psychology" || tag == "Law")
+	 					{
+	 						$("#prof4").show();
+	 					}
+	 				}
+
+	 				else if (status1)
+	 				{
+	 					if (tag == "Statistics" || tag == "Data Science")
+	 					{
+		 					$("#stu1").show();
+	 					}
+
+	 					if (tag == "World History" || tag == "Genealogy")
+	 					{
+	 						$("#stu2").show();
+	 					}
+
+	 					if (tag == "Paleontology" || tag == "Geology")
+	 					{
+	 						$("#stu3").show();
+	 					}
+
+	 					if (tag == "Iconography" || tag == "Cryptology")
+	 					{
+	 						$("#stu4").show();
+	 					}
+
+	 				}
+
+	 			});
+	 		}
+	 	}
+
+	 	function drop(tag)
+	 	{
+	 		document.getElementById(tag).remove()
+	 	}
+	 </script>
+
+
+  </head>
+  <body>
+	  <div>
+          <div class="login-form" style="background-color:#16A085; border-radius:0px">
+			  <img src = "{{STATIC_URL}}img/icons/svg/retina.svg" style="height:5%; width:5%">
+			  	<text style="color:white; font-size:4vh">&nbsp;&nbsp;&nbsp;&nbsp;Scholaborate</text>
+
+		  </div>
+	  </div>
+				  <br>
+				<div class="login-form" style="margin-left:2%; width:40%; float:left;">
+					<div class="bootstrap-tagsinput" id="tags" style="width:80%; float:left; margin-left:2%; background-color:#EEEFF1">
+						<div class="tagsinput-primary">
+			            	<div class="bootstrap-tagsinput">
+			            		<input type="text" value="" id="currenttag" placeholder="Tell us your interests" style="width:100%; font-size:3vh" onkeypress="handle(event)">
+			            	</div>
+		          		</div>
+			        </div>
+
+			        <div style="width:40%; margin-top:0.9%; margin-left:3.5%;">
+			        	<input type="text" value="" placeholder="Proximity (in miles)" class="form-control" style="border:2px solid #18BD9C; font-size:3vh;">
+			        </div>
+
+			        <div style="width:20%; margin-left:3.5%">
+			        	<br>
+			        	<b>Look for:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+			        	<label class="radio">
+	            		<input type="radio" name="optionsRadios" id="optionsRadios1" value="students" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>Students
+	            		</label>
+	            		<label class="radio">
+	            		<input type="radio" name="optionsRadios" id="optionsRadios2" value="professors" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>Professors
+	            		</label>
+			        </div>
+
+		     	</div>
+
+		     	<!-- Prof 1 -->
+		     	<div class="swatches-col" id="prof1" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:5%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/prof1.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Dr. Sheldon Cooper</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">97%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.5</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="tags" style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Machine Learning</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Artificial Intelligence</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Prof 2 -->
+			  	<div class="swatches-col" id="prof2" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:5%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/prof2.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Dr. Leonard Hofstader</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">60%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">2</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Natural Language Processing</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Machine Learning</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Prof 3 -->
+			  	<div class="swatches-col" id="prof3" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/prof3.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Dr. Amy Farah Fowler</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">40%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">4.8</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Biochemistry</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Microbiology</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Prof 4 -->
+			  	<div class="swatches-col" id="prof4" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/prof4.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Dr. Lorelei Martins</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">60%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.6</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Criminal Psychology</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Law</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Stu 1 -->
+			  	<div class="swatches-col" id="stu1" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/stu1.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Anakin Skywalker</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">26%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.6</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Statistics</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Data Science</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Stu 2 -->
+			  	<div class="swatches-col" id="stu2" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/stu3.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Hermoine Granger</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">80%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.4</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">World History</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Genealogy</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Stu 3 -->
+			  	<div class="swatches-col" id="stu3" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/stu2.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Frodo</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">80%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.4</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Paleontology</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Geology</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+			  	<!-- Stu 4 -->
+			  	<div class="swatches-col" id="stu4" style="width:50%; margin-bottom:2%; background-color:#EEEFF1; margin-left:47%; float:left; border:2px solid #18BD9C">
+		     		<img src="{{STATIC_URL}}img/stu4.png" style="width:17.5%; height:10%; float:left; margin-top:1%; margin-bottom:1%; margin-left:2%">
+			  			<div class="pallete-item" style="width:30%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Sophie Neveu</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:3vh;">
+				  					<img src="{{STATIC_URL}}img/icons/svg/mail.svg" style="width:20%; margin-right:7.5%">
+				  					<img src="{{STATIC_URL}}img/icons/svg/map.svg" style="width:20%; margin-left:7.5%; margin-right:7.5%">
+				  				</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Match</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">80%</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div class="pallete-item" style="width:15%; margin-top:2%; margin-left:4%; margin-bottom:1%">
+				  			<dl class="palette palette-green-sea">
+				  				<center><dd style="font-size:2vh;">Proximity</dd></center>
+				  			</dl>
+				  			<dl class="palette palette-midnight-blue">
+				  				<center><dd style="font-size:4vh;">3.4</dd></center>
+				  			</dl>
+			  			</div>
+			  			<div style="width:100%; margin-top:22.5%">
+			  				<b><text style="font-size:3vh; margin-top:50%; margin-left:2%">Research Interests</text></b><br>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Iconography</div>
+			  				<div class="tag label label-info" style="float:left; margin-right:1%;  margin-left:2%; background-color:#16A085; font-size:3vh; color:white;">Cryptology</div>
+			  				<br><br>
+			  			</div>
+			  	</div>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  </body>
+</html>
+

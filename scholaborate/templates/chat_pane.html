@@ -1,0 +1,28 @@
+<html>
+	<head><title>Chat</title>
+		<meta http-equiv="refresh" content="1">
+		<style>
+			text {font-size:30px}
+			time {font-size:20px; text-align:right}
+		</style>
+	</head>
+	
+	<body>
+		{% for message in messages %}
+			{% ifequal message.sender user %}
+				<div style="float:right">
+					<text style="color:#16A085"><center>{{ message.content }}</center></text><br>
+					<time style="color:#16A085">{{ message.timestamp }}</time>
+				</div><br><br><br><br><br>
+			{% else %}
+				<div style="float:left">
+					<text style="color:#E74C3C"><center>{{ message.content  }}</center></text><br>
+					<time style="color:#E74C3C">{{ message.timestamp }}</time>
+				</div><br><br><br><br><br>
+			{% endifequal %}
+			<hr>
+		{% endfor %}
+		<br>
+		
+	</body>
+</html>

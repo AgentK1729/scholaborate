@@ -1,0 +1,65 @@
+<html>
+  <head><title>Login</title>
+    <link rel="stylesheet" href="http://crowdcoach.pythonanywhere.com/static/style.css">
+    <script src = "http://crowdcoach.pythonanywhere.com/static/jquety.js"></script>
+
+    <style>
+        input[type="text"], input[type="password"]
+        {
+            width : 30vw;
+            height : 6vh;
+            font-size : 3vh;
+        }
+
+        error
+        {
+            font-size : 5vh;
+            color : white;
+        }
+
+        logo
+        {
+            font-size : 20vh;
+            color : white;
+        }
+
+        tagline
+        {
+            font-size : 5vh;
+            color : white;
+        }
+
+        a {font-size: 24px;}
+    </style>
+
+  </head>
+  <body>
+
+      <script>
+            $(document).ready (function ()
+            {
+                $("logo").hide ();
+                $("tagline").hide ();
+                $("logo").delay(250).slideDown ();
+                $("tagline").delay(500).slideDown ();
+            });
+        </script>
+
+      <center>
+      <div class = "jumbotron">
+    <form action = "/shopping/home/" method = "post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type = "submit" value = "Login" name = "login" class="btn btn-primary btn-lg">
+    </form>
+    <a href = "/shopping/signup">Register</a><br>
+    <error>{{ error }}</error>
+    </div>
+
+        
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><tagline>http://sic.tejassathe.com</tagline>
+
+    </center>
+  </body>
+</html>
